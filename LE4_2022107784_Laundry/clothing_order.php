@@ -1,5 +1,9 @@
 <?php
-
+/*
+    PROGRAMMER: Nicholas Domingo
+    CREATED: 9/3/26
+    DESCRIPTION: Create a laundry order application with user and admin features
+*/
 session_start();
 require_once 'functions.php';
 preventCaching();
@@ -10,10 +14,8 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['role']) || $_SESSION['rol
     exit();
 }
 
-// holds all orders produced for current session
-if (!isset($_SESSION['orders'])) {
-    $_SESSION['orders'] = [];
-}
+// orders live in data/orders.xml, not the session
+$orders = loadOrders();
 
 $sizes = getLaundrysizes(); 
 $paymentMethods = ["GCash", "Maya", "Bank Transfer", "Cash on Pickup"];
@@ -44,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
         $discount      = calculateDiscount($serviceCharge);
         $finalAmount   = $serviceCharge - $discount;
         $paymentStatus = getPaymentStatus($paymentMethod);
-        $orderId       = generateOrderId($_SESSION['orders']);
+        $orderId       = generateOrderId($orders);
 
         $newOrder = 
         [
@@ -67,8 +69,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
             "date"    => $date
         ];
 
-        // add new order to orders list for viewing
-        $_SESSION['orders'][] = $newOrder;
+        // add new order to orders.xml for viewing
+        addOrder($newOrder);
         $orderSummary = $newOrder;
     }
 }

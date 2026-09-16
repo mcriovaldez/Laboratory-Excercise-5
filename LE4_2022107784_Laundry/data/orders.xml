@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<orders><order><order_id>LND001</order_id><customer>john</customer><size>L</size><rate>40</rate><service_charge>40</service_charge><discount>0</discount><final_amount>40</final_amount><instructions>qwdwqd</instructions><location>wqdqwdwqd</location><payment_method>Maya</payment_method><payment_status>Fully Paid</payment_status><order_status>Order Received</order_status><clothing_type>Headwear</clothing_type><email>nick@mail.com</email><phone>09213092103</phone><date>2026-09-24</date></order></orders>
