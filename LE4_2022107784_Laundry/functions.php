@@ -7,12 +7,15 @@
 //functions for laundry processing
 
 // returns laundry price
-function getLaundryServices() {
+function getLaundrysizes() {
     return [
-        "Wash, Dry and Fold" => 60,
-        "Wash and Dry"       => 50,
-        "Wash Only"          => 35,
-        "Dry and Fold"       => 40
+        "XXL"  => 60,
+        "XL"   => 50,
+        "L"    => 40,
+        "M"    => 35,
+        "S"    => 30,
+        "XS"   => 25,
+        "XXS"  => 20
     ];
 }
 

@@ -69,7 +69,7 @@ unset($_SESSION['process_message']);
                             <td><?php echo htmlspecialchars($order['order_id']); ?></td>
                             <td><?php echo htmlspecialchars($order['customer']); ?></td>
                             <td><?php echo htmlspecialchars($order['service']); ?></td>
-                            <td><?php echo $order['weight']; ?> kg</td>
+                            <td><?php echo $order['weight']; ?> </td>
                             <td><?php echo formatPeso($order['final_amount']); ?></td>
                             <td><?php echo htmlspecialchars($order['payment_method']); ?></td>
                             <td>
