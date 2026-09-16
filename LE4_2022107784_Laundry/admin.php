@@ -1,5 +1,9 @@
 <?php
-
+/*
+    PROGRAMMER: Nicholas Domingo
+    CREATED: 9/3/26
+    DESCRIPTION: Create a laundry order application with user and admin features
+*/
 session_start();
 require_once 'functions.php';
 preventCaching();
@@ -21,7 +25,7 @@ if ($_SESSION['role'] !== 'admin') {
     exit();
 }
 
-$orders = $_SESSION['orders'] ?? [];
+$orders = loadOrders();
 
 $processMessage = $_SESSION['process_message'] ?? '';
 unset($_SESSION['process_message']);

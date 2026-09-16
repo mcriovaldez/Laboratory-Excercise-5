@@ -1,18 +1,30 @@
 <?php
-
+/*
+    PROGRAMMER: Nicholas Domingo
+    CREATED: 9/3/26
+    DESCRIPTION: Create a laundry order application with user and admin features
+*/
 session_start();
 
-// only clear auth-related session data on logout.
-// $_SESSION['orders'] is intentionally left alone - it's the only place
-// order data lives, and admins need to keep seeing orders placed by
-// users who have since logged out. (Calling session_destroy() here wipes
-// $_SESSION['orders'] too, which is what was deleting everyone's orders.)
-// The Back-button-after-logout issue is instead fixed by sending
-// no-cache headers on every protected page - see preventCaching()
-// in functions.php - so the browser can't show a stale cached copy.
-unset($_SESSION['username']);
-unset($_SESSION['role']);
-unset($_SESSION['login_attempts']);
+// orders now live in data/orders.xml (see functions.php), not $_SESSION,
+// so it's safe to fully tear down the session here without losing anyone's data.
+$_SESSION = [];
+
+// remove the session cookie itself so the browser can't replay the old session id
+if (ini_get("session.use_cookies")) {
+    $params = session_get_cookie_params();
+    setcookie(
+        session_name(),
+        '',
+        time() - 42000,
+        $params["path"],
+        $params["domain"],
+        $params["secure"],
+        $params["httponly"]
+    );
+}
+
+session_destroy();
 
 header("Location: login.php");
 exit();
