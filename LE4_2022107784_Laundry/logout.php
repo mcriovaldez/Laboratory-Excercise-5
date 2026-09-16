@@ -23,6 +23,12 @@ if (ini_get("session.use_cookies")) {
 
 session_destroy();
 
+/*
+unset($_SESSION['username']);
+unset($_SESSION['role']);
+unset($_SESSION['login_attempts']);
+*/
+
 
 header("Location: login.php");
 exit();

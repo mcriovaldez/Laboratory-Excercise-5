@@ -40,7 +40,7 @@ if ($_SESSION['role'] !== 'user') {
             <p>Role: Regular User</p>
 
             <div class="menu">
-                <a class="btn btn-primary" href="laundry_order.php">Create Laundry Order</a>
+                <a class="btn btn-primary" href="clothing_order.php">Create Laundry Order</a>
                 <a class="btn btn-primary" href="my_orders.php">View My Orders</a>
                 <a class="btn btn-logout" href="logout.php">Logout</a>
             </div>

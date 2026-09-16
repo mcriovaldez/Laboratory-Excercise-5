@@ -56,8 +56,8 @@ unset($_SESSION['process_message']);
                     <tr>
                         <th>Order ID</th>
                         <th>Customer</th>
-                        <th>Service</th>
-                        <th>Weight</th>
+                        <th>Type</th>
+                        <th>Size</th>
                         <th>Amount</th>
                         <th>Payment Method</th>
                         <th>Payment Status</th>
@@ -68,8 +68,8 @@ unset($_SESSION['process_message']);
                         <tr>
                             <td><?php echo htmlspecialchars($order['order_id']); ?></td>
                             <td><?php echo htmlspecialchars($order['customer']); ?></td>
-                            <td><?php echo htmlspecialchars($order['service']); ?></td>
-                            <td><?php echo $order['weight']; ?> </td>
+                            <td><?php echo htmlspecialchars($order['clothing_type']); ?></td>
+                            <td><?php echo htmlspecialchars($order['size']); ?></td>
                             <td><?php echo formatPeso($order['final_amount']); ?></td>
                             <td><?php echo htmlspecialchars($order['payment_method']); ?></td>
                             <td>

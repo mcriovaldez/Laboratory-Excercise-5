@@ -40,8 +40,9 @@ foreach ($allOrders as $order) {
                 <table class="orders-table">
                     <tr>
                         <th>Order ID</th>
-                        <th>Service</th>
-                        <th>Weight</th>
+                        <th>Type</th>
+                        <th>Size</th>
+                        <th>Instructions</th>
                         <th>Final Amount</th>
                         <th>Payment Method</th>
                         <th>Payment Status</th>
@@ -50,8 +51,9 @@ foreach ($allOrders as $order) {
                     <?php foreach ($myOrders as $order): ?>
                         <tr>
                             <td><?php echo htmlspecialchars($order['order_id']); ?></td>
-                            <td><?php echo htmlspecialchars($order['service']); ?></td>
-                            <td><?php echo $order['weight']; ?></td>
+                            <td><?php echo htmlspecialchars($order['clothing_type']); ?></td>
+                            <td><?php echo htmlspecialchars($order['size']); ?></td>
+                            <td><?php echo htmlspecialchars($order['instructions']); ?></td>
                             <td><?php echo formatPeso($order['final_amount']); ?></td>
                             <td><?php echo htmlspecialchars($order['payment_method']); ?></td>
                             <td>
