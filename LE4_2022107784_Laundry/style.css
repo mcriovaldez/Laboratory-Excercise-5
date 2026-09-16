@@ -1,0 +1,99 @@
+/*
+    PROGRAMMER: Nicholas Domingo
+    CREATED: 9/3/26
+    DESCRIPTION: Create a laundry order application with user and admin features
+*/    
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f5f5f5;
+}
+
+h1, h2 {
+    color: #2c5c8a;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    text-align: left;
+}
+
+th {
+    background: #e0e0e0;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 6px;
+    margin-top: 3px;
+}
+
+.radio {
+    display: inline-block;
+}
+
+.checkbox-row {
+    margin-top: 10px;
+}
+
+.checkbox-row label {
+    display: inline-block;
+    margin-top: 0;
+    font-weight: normal;
+}
+
+.checkbox-row input[type="checkbox"] {
+    width: auto;
+    margin: 0 6px 0 0;
+    vertical-align: middle;
+}
+
+.btn {
+    display: inline-block;
+    background: #2c5c8a;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 14px;
+    border: none;
+    margin-top: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.btn-logout {
+    background: #a33;
+}
+
+.error-message, .error-box {
+    color: #a33;
+}
+
+.notice {
+    color: green;
+}
+
+.status-paid {
+    color: green;
+    font-weight: bold;
+}
+
+.status-unpaid {
+    color: #a33;
+    font-weight: bold;
+}
