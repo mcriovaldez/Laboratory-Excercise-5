@@ -31,11 +31,11 @@ foreach ($allOrders as $order) {
 <body>
     <div class="container">
         <div class="card wide">
-            <h1>MY LAUNDRY ORDERS</h1>
+            <h1>MY ORDERS</h1>
             <hr>
 
             <?php if (empty($myOrders)): ?>
-                <p>You have not created any laundry orders yet.</p>
+                <p>You have not created any orders yet.</p>
             <?php else: ?>
                 <table class="orders-table">
                     <tr>
@@ -51,7 +51,7 @@ foreach ($allOrders as $order) {
                         <tr>
                             <td><?php echo htmlspecialchars($order['order_id']); ?></td>
                             <td><?php echo htmlspecialchars($order['service']); ?></td>
-                            <td><?php echo $order['weight']; ?> kg</td>
+                            <td><?php echo $order['weight']; ?></td>
                             <td><?php echo formatPeso($order['final_amount']); ?></td>
                             <td><?php echo htmlspecialchars($order['payment_method']); ?></td>
                             <td>
