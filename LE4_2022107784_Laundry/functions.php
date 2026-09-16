@@ -1,10 +1,14 @@
-<!--
-    PROGRAMMER: Nicholas Domingo
-    CREATED: 9/3/26
-    DESCRIPTION: Create a laundry order application with user and admin features
--->
 <?php
 //functions for laundry processing
+
+// stops the browser from showing a cached copy of a protected page
+// (e.g. via the Back/Forward button) after the user has logged out
+function preventCaching() {
+    header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+    header("Cache-Control: post-check=0, pre-check=0", false);
+    header("Pragma: no-cache");
+    header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
+}
 
 // returns laundry price
 function getLaundrysizes() {
